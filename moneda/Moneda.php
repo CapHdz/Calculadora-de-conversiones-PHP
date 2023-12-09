@@ -1,43 +1,61 @@
 
 <?php
 //Creacion de la interfaz
+//Principio de Segregacion de interfaz
 interface IMoneda{
     public function convertir($moneda);
 }
 
+//Principio de Responsabilidad Unica
 //Clases implementadoras
 class Euro implements IMoneda{
     public function convertir($moneda){
-        $resultado = $moneda * 1.08;
-        return "Resultado: " . $resultado;
+        //Valores de monedas respecto al dolar a $1 el 8/12/23
+        $eur = 0.93;
+        $moneda = floatval($moneda);
+        $resultado = $moneda * $eur;
+        return "<h4>El valor ingresado en DOLARES equivalen a: <p class='text-success'>$resultado EUROS</p><h4>";
     }
 }
 
-class Quetzal implements IMoneda{
+class Yen implements IMoneda{
     public function convertir($moneda){
-        return "Conversion desde Dolar a Q";
+        //Valores de monedas respecto al dolar a $1 el 8/12/23
+        $yen = 144.86;
+        $resultado = $moneda * $yen;
+        return "<h4>El valor ingresado en DOLARES equivalen a:<p class='text-success'>$resultado YENES</p><h4>";
     }
 }
 
-class Lempira implements IMoneda{
+class FrancoSuizo implements IMoneda{
     public function convertir($moneda){
-        return "Conversion desde Dolar a L";
+        //Valores de monedas respecto al dolar a $1 el 8/12/23
+        $francoSuizo = 0.88;
+        $resultado = $moneda * $francoSuizo;
+        return "<h4>El valor ingresado en DOLARES equivalen a:<p class='text-success'>$resultado FRANCOS SUIZOS</p><h4>";
     }
 }
 
-class Cordova implements IMoneda{
+class AUD implements IMoneda{
     public function convertir($moneda){
-        return "Conversion desde Dolar a C";
+        //Valores de monedas respecto al dolar a $1 el 8/12/23
+        $dolarAustraliano = 1.36;
+        $resultado = $moneda * $dolarAustraliano;
+        return "<h4>El valor ingresado en DOLARES equivalen a: <p class='text-success'>$resultado DOLARES AUSTRALIANOS</p><h4>";
     }
 }
 
-class Balboa implements IMoneda{
+class LibraEsterlina implements IMoneda{
     public function convertir($moneda){
-        return "Conversion desde Dolar a B";
+        //Valores de monedas respecto al dolar a $1 el 8/12/23
+        $libraEsterlina= 0.80;
+        $resultado = $moneda * $libraEsterlina;
+        return "<h4>El valor ingresado en DOLARES equivalen a:<p class='text-success'>$resultado LIBRAS ESTERLINAS</p><h4>";
     }
 }
 
-//Implementaciones
-$euro = new Euro();
-echo $euro->convertir(1);
+//Principio de abierto y cerrado
+
+
+
 

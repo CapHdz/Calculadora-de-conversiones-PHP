@@ -14,28 +14,34 @@
         <h1>Convertidor de monedas</h1>
     </header>
     <section class="container">
-        <form action="" method="POST" class="needs-validation" novalidate>
+        <form action="" method="post" class="needs-validation" novalidate>
             <div class="col-md-6">
                 <label for="usd" class="form-label">USD</label>
-                <input type="number" step="0.01" class="form-control" min="0" id="usd" required>
+                <input name="dolar" type="number" step="0.01" class="form-control" min="0.01" required>
                 <div class="valid-feedback">
                     Formato correcto
                 </div>
                 <div class="invalid-feedback">
-                    Debes llenar este campo
+                    Este campo no puede estar vacio y debes ingresar solo numeros.
                 </div>
             </div>
             <br>
             <div class="col-md-6">
                 <label for="convertir" class="form-label">Moneda a convertir: </label>
-                <select required required>
+                <select name="moneda" required>
                     <option selected disabled value="">Seleccionar opcion...</option>
                     <option value="euro">Euro</option>
-                    <option value="quetzal">Quetzal</option>
-                    <option value="lempira">Lempira</option>
-                    <option value="cordova">Cordova</option>
-                    <option value="balboa">Balboa</option>
+                    <option value="yen">YEN</option>
+                    <option value="aud">Dolar Autraliano</option>
+                    <option value="francoSuizo">Franco Suizo</option>
+                    <option value="libraEsterlina">Libra Esterlina</option>
                 </select>
+                <div class="valid-feedback">
+                    Seleccion correcta
+                </div>
+                <div class="invalid-feedback">
+                    Debes seleccionar una opcion
+                </div>
             </div>
             <br>
             <input class="btn btn-primary" type="submit" value="Convertir">
@@ -43,7 +49,30 @@
     </section>
     <br>
     <section class="container">
-        <h2>Resultado de la conversion:</h2>
+        <?php
+        require './Moneda.php';
+
+        if(isset($_POST['dolar'], $_POST['moneda'])){
+            if($_POST['moneda'] == 'euro'){
+                $euroMoneda = new Euro();
+                echo $euroMoneda->convertir($_POST['dolar']);
+            }elseif($_POST['moneda'] == 'yen'){
+                $yenMoneda = new Yen();
+                echo $yenMoneda->convertir($_POST['dolar']);
+            }elseif($_POST['moneda'] == 'aud'){
+                $audMoneda = new AUD();
+                echo $audMoneda->convertir($_POST['dolar']);
+            }elseif($_POST['moneda'] == 'francoSuizo'){
+                $francoMoneda = new FrancoSuizo();
+                echo $francoMoneda->convertir($_POST['dolar']);
+            }elseif($_POST['moneda'] == 'libraEsterlina'){
+                $libraMoneda = new LibraEsterlina();
+                echo $libraMoneda->convertir($_POST['dolar']);
+            }else{
+                echo "<p class='text-danger'>No has seleccionado una moneda valida</p>";
+            }
+        }
+        ?>
     </section>
 
     <script src="../validaciones.js"></script>
