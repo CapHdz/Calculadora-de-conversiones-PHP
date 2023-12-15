@@ -32,7 +32,9 @@ function obtenerUnidades(tipo) {
         case "moneda":                     
             return ["dolares", "euros", "libras", "yenes", "yuanes"];                 
         case "tiempo":                     
-            return ["segundos", "minutos", "horas", "dias", "semanas"];    
+            return ["segundos", "minutos", "horas", "dias", "semanas"];   
+        case "longitud":                     
+            return ["centimetros", "metros", "kilometros", "pulgadas", "yardas"];         
         default:
             return [];
     }

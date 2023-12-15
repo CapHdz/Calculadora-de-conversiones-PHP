@@ -20,6 +20,7 @@
                 <option value="volumen">Volumen</option>
                 <option value="tiempo">Tiempo</option>
                 <option value="moneda">Moneda</option>
+                <option value="longitud">Longitud</option>
             </select>
             <div id="emailHelp" class="form-text">Selecciona la unidad de medida a convertir</div>
         </div>
