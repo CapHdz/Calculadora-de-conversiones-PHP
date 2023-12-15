@@ -29,6 +29,10 @@ function obtenerUnidades(tipo) {
             return ["gramos", "kilogramos", "toneladas", "onzas", "libras"];
         case "volumen":
             return ["mililitros", "litros", "metros_cubicos", "galones", "pulgadas_cubicas"];
+        case "moneda":                     
+            return ["dolares", "euros", "libras", "yenes", "yuanes"];                 
+        case "tiempo":                     
+            return ["segundos", "minutos", "horas", "dias", "semanas"];    
         default:
             return [];
     }

@@ -1,13 +1,14 @@
 <?php
     require "./clases/InterfaceConvertidor.php";
-    class Masa implements Convertidor{
+
+    class Tiempo implements Convertidor{
         public function convertir($tipo, $cantidad, $unidad_origen, $unidad_destino){
-            $conversiones = [
-                'gramos' => 1,
-                'kilogramos' => 0.001,
-                'toneladas' => 0.000001,
-                'onzas' => 0.035274,
-                'libras' => 0.00220462,
+            $conversiones = [             
+                'segundos' => 1,             
+                'minutos' => 0.0166667,             
+                'horas' => 0.000277778,             
+                'dias' => 1.15741e-5,             
+                'semanas' => 1.65344e-6,         
             ];
             return $this->realizarConversion($conversiones, $cantidad, $unidad_origen, $unidad_destino);
         }

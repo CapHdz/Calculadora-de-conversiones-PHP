@@ -1,5 +1,5 @@
 <?php
-    require "clases/InterfaceConvertidor.php";
+    require "./InterfaceConvertidor.php";
     class Volumen implements Convertidor{
         public function convertir($tipo, $cantidad, $unidad_origen, $unidad_destino){
             $conversiones = [

@@ -1,13 +1,13 @@
 <?php
     require "./clases/InterfaceConvertidor.php";
-    class Masa implements Convertidor{
+    class Moneda implements Convertidor{
         public function convertir($tipo, $cantidad, $unidad_origen, $unidad_destino){
             $conversiones = [
-                'gramos' => 1,
-                'kilogramos' => 0.001,
-                'toneladas' => 0.000001,
-                'onzas' => 0.035274,
-                'libras' => 0.00220462,
+                'dolares' => 1, 
+                'euros' => 0.85,             
+                'libras' => 0.73,             
+                'yenes' => 112.35,             
+                'yuanes' => 6.41,         
             ];
             return $this->realizarConversion($conversiones, $cantidad, $unidad_origen, $unidad_destino);
         }
