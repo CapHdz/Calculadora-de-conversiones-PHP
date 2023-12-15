@@ -1,5 +1,5 @@
 <?php
-    require "./clases/InterfaceConvertidor.php";
+    require_once "clases/InterfaceConvertidor.php";
     class Moneda implements Convertidor{
         public function convertir($tipo, $cantidad, $unidad_origen, $unidad_destino){
             $conversiones = [
