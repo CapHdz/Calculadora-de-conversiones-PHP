@@ -34,7 +34,9 @@ function obtenerUnidades(tipo) {
         case "tiempo":                     
             return ["segundos", "minutos", "horas", "dias", "semanas"];   
         case "longitud":                     
-            return ["centimetros", "metros", "kilometros", "pulgadas", "yardas"];         
+            return ["centimetros", "metros", "kilometros", "pulgadas", "yardas"];      
+            case "datos":                     
+            return ["bits", "bytes", "kilobits", "kilobytes", "megabytes"];        
         default:
             return [];
     }
