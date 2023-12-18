@@ -24,9 +24,9 @@
                 case 'longitud':
                     $conversor = new Longitud();
                     break; 
-                    case 'datos':
-                        $conversor = new Datos();
-                        break; 
+                case 'datos':
+                    $conversor = new Datos();
+                    break; 
                 default:
                     return "Tipo de medida no válido.";
             }

@@ -1,6 +1,5 @@
 <?php
     require_once "clases/InterfaceConvertidor.php";
-
     class Tiempo implements Convertidor{
         public function convertir($tipo, $cantidad, $unidad_origen, $unidad_destino){
             $conversiones = [             

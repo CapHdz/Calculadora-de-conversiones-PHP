@@ -51,7 +51,12 @@
 
             $resultado = $converter->convertir($tipo, $cantidad, $unidad_origen, $unidad_destino);
 
-            echo "<p>La conversión de $cantidad $unidad_origen a $unidad_destino da como resultado: $resultado $unidad_destino";
+            echo "
+            <section class='container'>
+            <p class='fs-3 text-center'>
+                La conversión de $cantidad $unidad_origen a $unidad_destino da como resultado: <span class='text-success'>$resultado $unidad_destino</span>
+            </p>
+            </section>";
         };
     ?>
     <?php include "modulos/footer.php"; ?>
